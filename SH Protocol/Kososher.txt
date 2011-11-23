@@ -1,1 +1,3 @@
-this is kossher
+<<<<<<< .mine
+This is not kososher=======
+this is kossher>>>>>>> .r4
