@@ -35,6 +35,7 @@
 
 int main( void )
 {
+	// Kososher
     halInit();                          //Initialize hardware
     unsigned char counter = 0;
     while (1) 
