@@ -44,11 +44,16 @@
 //#define USE_SECURITY_MODE_COORD_DIST_KEYS
 
 extern struct Device allDevices[MAX_NUM_DEVICES];
+extern struct Interrupt interruptQueue[MAX_NUM_INTERRUPT];
+extern int numInterrupts;
+extern signed int znpResult;
+
 
 unsigned char key[16] = {0x44, 0x65, 0x72, 0x65, 0x6B, 0x53, 0x6D, 0x69, 0x74, 0x68, 0x44, 0x65, 0x73, 0x69, 0x67, 0x6E};    //encryption key used in security
 
 int main( void )
 {
+    numInterrupts = 0;
     halInit(); 
     printf("\r\n++++++++++++++++++++++++++++++++++++++++++++++++++++\r\n");        
     printf("\r\nBasic Communications Example - COORDINATOR - using Simple API\r\n");
@@ -132,17 +137,36 @@ int main( void )
     getNetworkConfigurationParameters();                
     getDeviceInformation();
 #endif    
+    
+    // Main While Loop
+    unsigned char i = 0;
+    while (1) {
+      smartAck(0,SMART_ACK_IDLE);
+      if (numInterrupts > 0) {
+        dataSend(interruptQueue[numInterrupts].shortAddr[0] + 256*interruptQueue[numInterrupts].shortAddr[1], i, 10, "hello", 0);
+        smartAck(10,SMART_ACK_ACK);
+        i++;
+        i = i % 4;
+        numInterrupts--;
+      }
+    }
+    /*
     while (allDevices[0].active == 0) {
-      smartAck(0,1);
+      smartAck(0,SMART_ACK_ACK);
     }
     printf("done fill in\n");
-    /* Now the network is running - continually poll for any received messages from the ZNP */
-    //displayReceivedMessages();
     char message[] = "hello\0";
+    unsigned char i = 0;
     while(1) {
-    dataSend(allDevices[0].shortAddr[0] + 256*allDevices[0].shortAddr[1], 0, 15, message, 5);
-    smartAck(15,1);
+      smartAck(0,SMART_ACK_ACK);
+      if (znpResult == RECEIVED_INTERRUPT) {
+        dataSend(allDevices[0].shortAddr[0] + 256*allDevices[0].shortAddr[1], i, 10, message, 5);
+        smartAck(10,SMART_ACK_ACK);
+        i++;
+        i = i % 4;
+      }
     }
+    */
 }
 
 /* @} */

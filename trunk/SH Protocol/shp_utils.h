@@ -19,7 +19,18 @@
 #ifndef SHP_UTILS_H
 #define SHP_UTILS_H
 
-#define MAX_NUM_DEVICES 3
+#define MAX_NUM_DEVICES 8
+#define MAX_NUM_INTERRUPT 8
+#define TIMEOUTSEC 2
+
+#define TIME_OUT_ERROR -1
+#define RECEIVED_DATA 0
+#define RECEIVED_ACK 1
+#define RECEIVED_INTERRUPT 2
+
+#define SMART_ACK_READ 0
+#define SMART_ACK_ACK 1
+#define SMART_ACK_IDLE 2
 
 void smartAck(unsigned char handle, unsigned char mode);
 void dataSend(unsigned int destinationShortAddress, unsigned int commandID, unsigned char handle, unsigned char* data, unsigned char dataLength);
@@ -32,5 +43,7 @@ struct Device {
   unsigned char active;  // whether this entry is active (available) 
 };
 
- 
+struct Interrupt {
+    unsigned char shortAddr[2]; // short address of intterupting device
+};
 #endif
