@@ -33,14 +33,16 @@
 #include "../HAL/hal.h"
 #include "../ZNP/znp_interface.h"
 #include "../ZNP/application_configuration.h"
-#include "../ZNP/af_zdo.h"
+//#include "../ZNP/af_zdo.h"
+#include "../ZNP/simple_api.h"
 #include "znp_example_utils.h"   //for handleReturnValue() and polling()
+#include "shp_utils.h"
 
 /** function pointer (in hal file) for the function that gets called when the timer generates an int*/
 extern void (*timerIsr)(void);
-
+extern signed int znpResult ;
 signed int returnValue;
-
+extern unsigned char znpBuf[100] ;
 /** Handles timer interrupt */
 void handleTimer();
 
@@ -83,18 +85,18 @@ int main( void )
     
     /* Configure the ZNP for our application */
     printf("Registering Application\r\n");   
-    afRegisterGenericApplication();
+    sapiRegisterGenericApplication();
     handleReturnValue();
     delayMs(500);
     
     /* Now, start the application. We will receive a START_REQUEST_SRSP, and then if it is successful, a START_CONFIRM. */
     printf("Starting the Application\r\n");     
-    zdoStartApplication();
+    sapiStartApplication();
     handleReturnValue();
 
     /** Wait until we get on the network. 
     We will receive a ZDO_STATE_CHANGE_IND message whenever the state changes. */
-    waitForDeviceState(DEV_END_DEVICE);
+    //waitForDeviceState(DEV_END_DEVICE);
     
     printf("\r\nOn Network!\r\n");
     
@@ -121,12 +123,43 @@ int main( void )
     clearLeds();
     while (1)
     {
-        setLed(1);
-        printf("Sending Message %u\r\n", counter++);
-        afSendData(DEFAULT_ENDPOINT,DEFAULT_ENDPOINT,0, TEST_CLUSTER, testMessage, 5);
-        handleReturnValue();
-        clearLeds();        
-        HAL_SLEEP();
+        //setLed(1);
+        //printf("Sending Message %u\r\n", counter++);
+        //afSendData(DEFAULT_ENDPOINT,DEFAULT_ENDPOINT,0, TEST_CLUSTER, testMessage, 5);
+        dataSend(0x00, 0x5555, 20, testMessage, 5);
+        smartAck(20,1);
+        smartAck(0,0);
+        printf("znpResult: %d",znpResult);
+        printHexBytes(znpBuf,znpBuf[0]+3);
+        if (znpBuf[5]==0x00)
+        {
+          clearLeds(); 
+          
+        }
+        else if (znpBuf[5]==0x01)
+        {
+          clearLeds(); 
+          setLed(0);
+        }
+        else if (znpBuf[5]==0x02)
+        {
+          clearLeds(); 
+          setLed(1);
+        }
+        else if (znpBuf[5]==0x03)
+        {
+          clearLeds(); 
+          setLed(0);
+          setLed(1);
+        }
+        
+        if (znpResult==-1)
+        {
+          printf("Time out");
+        }
+        //handleReturnValue();
+        //clearLeds();        
+        //HAL_SLEEP();
     }
 }
 
