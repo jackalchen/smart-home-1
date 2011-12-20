@@ -34,6 +34,7 @@ void addNewDevice(unsigned int shortAddr)
 
 void smartAck(unsigned char handle, unsigned char mode)
 /*
+handle: a transaction ID for ACK. This is a unique ID to check if we get the correct ACK.
 mode == 0: read data and store it in znpBuf
 mode == 1: read ack. ignore evreything else, except interrupt
 */

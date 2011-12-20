@@ -26,10 +26,10 @@ void dataSend(unsigned int destinationShortAddress, unsigned int commandID, unsi
 void shpUtilInit();
 
 struct Device {
-  unsigned char macAddr[8];
-  unsigned char shortAddr[2];
-  unsigned char appId[2];
-  unsigned char active;
+  unsigned char macAddr[8]; // mac address of device
+  unsigned char shortAddr[2]; // short address of device
+  unsigned char appId[2]; // the ID for the app for this device
+  unsigned char active;  // whether this entry is active (available) 
 };
 
  
