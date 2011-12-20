@@ -2,13 +2,16 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>632920730</fileChecksum>
+  <fileChecksum>1592073743</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs/>
     <forcedrebuild>
       <name>[MULTI_TOOL]</name>
       <tool>XLINK</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>[REBUILD_ALL]</name>
     </forcedrebuild>
   </configuration>
 </project>
