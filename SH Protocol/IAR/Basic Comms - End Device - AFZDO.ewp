@@ -963,6 +963,12 @@
       <name>$PROJ_DIR$\..\..\ZNP\application_configuration.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\ZNP\simple_api.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\ZNP\simple_api.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\ZNP\znp_interface.c</name>
     </file>
     <file>
@@ -971,6 +977,12 @@
   </group>
   <file>
     <name>$PROJ_DIR$\..\example_basic_comms_end_device_afzdo.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\shp_utils.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\shp_utils.h</name>
   </file>
   <file>
     <name>$PROJ_DIR$\..\znp_example_utils.c</name>
