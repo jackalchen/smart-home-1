@@ -18,13 +18,13 @@
       <file>$PROJ_DIR$\..\..\ZNP\znp_interface_spi.h</file>
       <file>$PROJ_DIR$\..\..\HAL\hal_cc2530znp_target_board.H</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\stdarg.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-      <file>$TOOLKIT_DIR$\inc\msp430x22x4.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
-      <file>$TOOLKIT_DIR$\inc\in430.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
-      <file>$PROJ_DIR$\..\..\common\printf.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\..\..\common\printf.h</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\msp430x22x4.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
@@ -39,33 +39,42 @@
       <file>$PROJ_DIR$\..\znp_example_utils.h</file>
       <file>$PROJ_DIR$\Debug\Obj\af_zdo.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\utilities.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\example_basic_comms_coordinator_afzdo.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\utilities.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\example_basic_comms_coordinator_afzdo.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\application_configuration.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\application_configuration.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\hal_cc2530znp_target_board.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\znp_interface_spi.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\znp_interface.r43</file>
       <file>$PROJ_DIR$\Debug\Obj\znp_example_utils.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\hal_cc2530znp_target_board.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\application_configuration.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\znp_interface.pbi</file>
-      <file>$PROJ_DIR$\..\..\ZNP\af_zdo.h</file>
       <file>$PROJ_DIR$\..\..\ZNP\application_configuration.h</file>
+      <file>$PROJ_DIR$\..\..\ZNP\af_zdo.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\znp_interface.pbi</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\string.h</file>
       <file>$PROJ_DIR$\..\..\ZNP\znp_interface.h</file>
       <file>$PROJ_DIR$\..\..\HAL\hal.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\example_basic_comms_coordinator_afzdo.pbi</file>
       <file>$PROJ_DIR$\..\..\ZNP\znp_commands.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\example_basic_comms_coordinator_afzdo.pbi</file>
       <file>$PROJ_DIR$\Debug\Exe\Basic Comms - Coordinator - AFZDO.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\Basic Comms - Coordinator - AFZDO.pbd</file>
       <file>$PROJ_DIR$\Debug\Obj\znp_interface_spi.pbi</file>
       <file>$PROJ_DIR$\Debug\Obj\znp_example_utils.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\Basic Comms - Coordinator - AFZDO.pbd</file>
     </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+    </file>
     <file>
       <name>$PROJ_DIR$\..\..\ZNP\application_configuration.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 40</file>
+          <file> 36</file>
         </tool>
         <tool>
           <name>ICC430</name>
@@ -75,7 +84,7 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 46 10 13 15 25 17 11 16 19 20 12 18 21 24 43</file>
+          <file> 46 10 17 15 25 14 11 12 19 20 18 13 21 24 41</file>
         </tool>
       </inputs>
     </file>
@@ -94,7 +103,7 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 17 11 16 19 20 12 18 21</file>
+          <file> 14 11 12 19 20 18 13 21</file>
         </tool>
       </inputs>
     </file>
@@ -113,7 +122,7 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 42 43 45 48 46 10 13 15 25 17 11 16 19 20 12 18 21 24 44 14 9</file>
+          <file> 42 41 45 47 46 10 17 15 25 14 11 12 19 20 18 13 21 24 44 16 9</file>
         </tool>
       </inputs>
     </file>
@@ -126,13 +135,13 @@
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 39</file>
+          <file> 37</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 10 13 15 25 17 11 16 19 20 12 18 21 24 22</file>
+          <file> 10 17 15 25 14 11 12 19 20 18 13 21 24 22</file>
         </tool>
       </inputs>
     </file>
@@ -145,13 +154,13 @@
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 34</file>
+          <file> 33</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 23 16 19 20 12 18 21 14 17 11</file>
+          <file> 23 12 19 20 18 13 21 16 14 11</file>
         </tool>
       </inputs>
     </file>
@@ -160,17 +169,17 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 41</file>
+          <file> 43</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 37</file>
+          <file> 39</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 45 48 44 16 19 20 12 18 21 14 46 10 13 15 25 17 11 24 9</file>
+          <file> 45 47 44 12 19 20 18 13 21 16 46 10 17 15 25 14 11 24 9</file>
         </tool>
       </inputs>
     </file>
@@ -179,41 +188,22 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 47</file>
+          <file> 48</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 33</file>
+          <file> 34</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 46 10 13 15 25 17 11 16 19 20 12 18 21 24 45 48 43 42 30</file>
+          <file> 46 10 17 15 25 14 11 12 19 20 18 13 21 24 45 47 41 42 30</file>
         </tool>
       </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\ZNP\znp_interface_spi.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 50</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 36</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 46 10 13 15 25 17 11 16 19 20 12 18 21 24 9</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\znp_example_utils.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
@@ -227,25 +217,35 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 46 10 13 15 25 17 11 16 19 20 12 18 21 24 45 48 42 43 9</file>
+          <file> 46 10 17 15 25 14 11 12 19 20 18 13 21 24 9</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>[ROOT_NODE]</name>
+      <name>$PROJ_DIR$\..\znp_example_utils.c</name>
       <outputs>
         <tool>
-          <name>XLINK</name>
-          <file> 49</file>
+          <name>BICOMP</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 40</file>
         </tool>
       </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46 10 17 15 25 14 11 12 19 20 18 13 21 24 45 47 42 41 9</file>
+        </tool>
+      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\Debug\Obj\Basic Comms - Coordinator - AFZDO.pbd</name>
       <inputs>
         <tool>
           <name>BILINK</name>
-          <file> 26 40 47 28 27 32 51 41 50</file>
+          <file> 26 36 48 28 27 32 52 43 51</file>
         </tool>
       </inputs>
     </file>
